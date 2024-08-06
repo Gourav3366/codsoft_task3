@@ -1,0 +1,174 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --button-bg-color: #e0e0e0;
+    --button-text-color: #333;
+    --primary-color: #ff6f61;
+    --secondary-color: #4db6ac;
+}
+
+body.dark-mode {
+    --bg-color: #2e2e2e;
+    --text-color: #f5f5f5;
+    --button-bg-color: #555;
+    --button-text-color: #f5f5f5;
+    --primary-color: #ff8a65;
+    --secondary-color: #80cbc4;
+}
+
+.calculator {
+    width: 340px;
+    background-color: var(--button-bg-color);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.screen {
+    background-color: #444;
+    color: white;
+    font-size: 2rem;
+    text-align: right;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.function {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.memory {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.digit {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+}
+
+.equals {
+    background-color: var(--primary-color);
+    color: white;
+    grid-column: span 2;
+}
+
+.history {
+    width: 340px;
+    background-color: var(--button-bg-color);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.history h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.history ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.history li {
+    padding: 5px 0;
+    border-bottom: 1px solid #555;
+}
+
+.clear-history {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.clear-history:hover {
+    background-color: #ff8a65;
+}
+
+.clear-history:active {
+    transform: scale(0.95);
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.dark-mode-toggle label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dark-mode-toggle input[type="checkbox"] {
+    margin-right: 10px;
+}
